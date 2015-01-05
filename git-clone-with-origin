@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Clones a local repository, and then sets the origin of the clone to the
+# same as the original repository.
+# This is useful as a time and space* saver when you already have a local clone of a large remote repository and want to make another clone of it (which you'd usually do by making a clone over the network, which would be slower than making a local clone).
+# * git clone uses hard links when making a local clone, which saves space
+
 set -e
 
 SOURCE="$1"
